@@ -6,6 +6,7 @@ st.title("金融科技專題:文本生成-市場焦點機器人")
 
 yt_url= {'第1組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/7xnzMr0B3b8',
             'https://docs.google.com/presentation/d/1pRoNldhsNV0JASts5NCjtUZW37ZCSJCkKcaZ97cgmio/edit'],
+         '第1組-10分鐘-遴選.市場焦點機器人':['https://www.youtube.com/watch?v=Is2hGoqxx3k'],
          '第2組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/4i5B8hfvl6w',
             'https://github.com/yuchiahung/Fintech-2021-T2',
             'https://github.com/grangier/python-goose','https://www.reddit.com/r/stocks/'],
