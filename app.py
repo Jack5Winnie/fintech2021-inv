@@ -44,10 +44,13 @@ with st.sidebar.beta_container():
     #st.info(f"{title} {url}")
 
 with st.sidebar.beta_container():
-    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'
     qr_size = 5 #st.slider('Slide me', min_value = 6, max_value = 12, value = 6)
     #logo_file = "./images/ns-logo.png"
     #open("./images/logo.png", "wb").write(logo_file.getbuffer())
+    qr_name = qr_maker.qr_code(link=url, logo=False,  size=qr_size)
+    st.image(qr_name, caption=f'{title} - Youtube')
+
+    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'
     qr_name = qr_maker.qr_code(link=hyper_link, logo=False,  size=qr_size)
     st.image(qr_name, caption=hyper_link)
 
