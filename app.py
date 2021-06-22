@@ -1,12 +1,19 @@
 from altair.vegalite.v4.api import value
 import streamlit as st
 from pytube import YouTube
+import qr_maker
+
+###### SET UP PAGE ######
+#icon_path = os.path.join(".", "images", "BullBear.png")
+st.set_page_config(page_title="金融科技專題 - 自動生成摘要與總結", page_icon=':smiley:',  # ':crescent-​moon:'
+                    layout='centered', initial_sidebar_state="auto")#"collapsed")
 
 st.title("金融科技專題:文本生成-市場焦點機器人")
 
 yt_url= {'第1組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/7xnzMr0B3b8',
             'https://docs.google.com/presentation/d/1pRoNldhsNV0JASts5NCjtUZW37ZCSJCkKcaZ97cgmio/edit'],
-         '第1組-10分鐘-遴選.市場焦點機器人':['https://www.youtube.com/watch?v=Is2hGoqxx3k'],
+         '第1組-10分鐘-遴選.市場焦點機器人':['https://www.youtube.com/watch?v=Is2hGoqxx3k', 
+            'https://docs.google.com/presentation/d/1pRoNldhsNV0JASts5NCjtUZW37ZCSJCkKcaZ97cgmio/edit'],
          '第2組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/4i5B8hfvl6w',
             'https://github.com/yuchiahung/Fintech-2021-T2',
             'https://github.com/grangier/python-goose','https://www.reddit.com/r/stocks/'],
@@ -36,6 +43,14 @@ with st.sidebar.beta_container():
         gits = ''
     #st.info(f"{title} {url}")
 
+with st.sidebar.beta_container():
+    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'
+    qr_size = 5 #st.slider('Slide me', min_value = 6, max_value = 12, value = 6)
+    #logo_file = "./images/ns-logo.png"
+    #open("./images/logo.png", "wb").write(logo_file.getbuffer())
+    qr_name = qr_maker.qr_code(link=hyper_link, logo=False,  size=qr_size)
+    st.image(qr_name, caption=hyper_link)
+
 #url = st.text_input(label='URL', value=url)
 
 if url != '':
@@ -63,9 +78,9 @@ if url != '':
         downloaded , download_audio = False , False
         with st.sidebar.beta_container():
             download_video = st.button("Download Video")
-        if yt.streams.filter(only_audio=True):
-            with st.sidebar.beta_container():
-                download_audio = st.button("Download Audio Only")
+        #if yt.streams.filter(only_audio=True):
+        #    with st.sidebar.beta_container():
+        #        download_audio = st.button("Download Audio Only")
         if download_video:
             #resolution_level = st.selectbox('resolution level ?', ['lowest','highest'])
             if resolution_level == 'lowest':
