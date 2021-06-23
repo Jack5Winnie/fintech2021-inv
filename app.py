@@ -91,7 +91,7 @@ if url != '':
 
     values = ['lowest','highest',"720p", "480p", "360p", "240p", "144p"]
     default_ix = values.index('highest')
-    desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
+    #desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
 
     with st.sidebar.beta_container():
         resolution_level = st.selectbox('Resolution Level ?', values, index=default_ix)
@@ -99,7 +99,7 @@ if url != '':
 
     if len(video) > 0:
         downloaded , download_audio = False , False
-        yt_file = f'{desktop}\\{title}.mp4'
+        yt_file = os.path.join(os.getcwd(), f'{title}.mp4')
         yt_file =st.text_input('Download video to :',yt_file)
         download_video = st.button("Download Video",)
         #if yt.streams.filter(only_audio=True):
@@ -118,7 +118,7 @@ if url != '':
 
             downloaded = True
         if download_audio:
-            yt_file = f'{desktop}\\{title}.mp3'
+            yt_file = os.path.join(os.getcwd(), f'{title}.mp3')
             yt_file =st.text_input('Download the audio to :',yt_file)
             video.filter(only_audio=True).first().download(filename=yt_file)
             downloaded = True
