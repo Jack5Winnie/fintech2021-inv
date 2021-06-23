@@ -42,7 +42,7 @@ with st.sidebar.beta_container():
     title = st.selectbox('請選擇-專題成果影片: ', list(titles), 0)
     url = yt_url[title][0]
     if len(yt_url[title])>1:
-        gits = '<a href="{git}" target="_blank">Github</a> | '.format(git=yt_url[title][1])
+        gits = ''#'<a href="{git}" target="_blank">Github</a> | '.format(git=yt_url[title][1])
     else:
         gits = ''
     #st.info(f"{title} {url}")
