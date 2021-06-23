@@ -2,6 +2,7 @@ from altair.vegalite.v4.api import value
 import streamlit as st
 from pytube import YouTube
 import qr_maker
+from streamlit_player import st_player
 
 ###### SET UP PAGE ######
 #icon_path = os.path.join(".", "images", "BullBear.png")
@@ -45,19 +46,36 @@ with st.sidebar.beta_container():
 
 with st.sidebar.beta_container():
     qr_size = 5 #st.slider('Slide me', min_value = 6, max_value = 12, value = 6)
-    #logo_file = "./images/ns-logo.png"
-    #open("./images/logo.png", "wb").write(logo_file.getbuffer())
+    #logo_file = st.file_uploader("./images/NanShan-New-Small.png")
+    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'
+    
+    #if logo_file:
+    #    open("./images/logo.png", "wb").write(logo_file.getbuffer())
+    #    qr_name = qr_maker.qr_code(link=url, logo=True,  size=qr_size)
+    #    st.image(qr_name, caption=f'{title} - Youtube')
+    #    #open("./images/logo.png", "wb").write(logo_file.getbuffer())
+    #    qr_name = qr_maker.qr_code(link=hyper_link, logo=True,  size=qr_size)
+    #    st.image(qr_name, caption=hyper_link)
+    #else:
     qr_name = qr_maker.qr_code(link=url, logo=False,  size=qr_size)
     st.image(qr_name, caption=f'{title} - Youtube')
 
-    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'
     qr_name = qr_maker.qr_code(link=hyper_link, logo=False,  size=qr_size)
     st.image(qr_name, caption=hyper_link)
+
+
+# Embed a youtube video
+#st_player("https://youtu.be/CmSKVW1v0xM")
+
+# Embed a music from SoundCloud
+#st_player("https://soundcloud.com/imaginedragons/demons")
+
 
 #url = st.text_input(label='URL', value=url)
 
 if url != '':
     #st.write(f'Getting the Data for the Youtube video \n{url}')
+    st_player(url)
     yt = YouTube(url)
     #raw_data = urllib.request.urlopen(yt.thumbnail_url).read()
     #image = Image.open(io.BytesIO(raw_data))#.resize((200, 200))
