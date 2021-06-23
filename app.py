@@ -73,7 +73,7 @@ with st.sidebar.beta_container():
 # Embed a music from SoundCloud
 #st_player("https://soundcloud.com/imaginedragons/demons")
 
-download_path = os.getcwd()    # pathlib.Path.home()
+download_path = '.'    # pathlib.Path.home()
 
 #url = st.text_input(label='URL', value=url)
 
