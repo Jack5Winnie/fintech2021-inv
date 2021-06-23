@@ -3,6 +3,8 @@ import streamlit as st
 from pytube import YouTube
 import qr_maker
 import os
+import pathlib
+
 #from streamlit_player import st_player
 
 ###### SET UP PAGE ######
@@ -99,7 +101,7 @@ if url != '':
 
     if len(video) > 0:
         downloaded , download_audio = False , False
-        yt_file = os.path.join(os.getcwd(), f'{title}.mp4')
+        yt_file = os.path.join(pathlib.Path.home(), f'{title}.mp4')
         yt_file =st.text_input('Download video to :',yt_file)
         download_video = st.button("Download Video",)
         #if yt.streams.filter(only_audio=True):
@@ -118,7 +120,7 @@ if url != '':
 
             downloaded = True
         if download_audio:
-            yt_file = os.path.join(os.getcwd(), f'{title}.mp3')
+            yt_file = os.path.join(pathlib.Path.home(), f'{title}.mp3')
             yt_file =st.text_input('Download the audio to :',yt_file)
             video.filter(only_audio=True).first().download(filename=yt_file)
             downloaded = True

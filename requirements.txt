@@ -3,3 +3,4 @@ pytube
 pyqrcode
 Pillow
 pypng
+pathlib
