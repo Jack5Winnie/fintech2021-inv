@@ -2,6 +2,7 @@ from altair.vegalite.v4.api import value
 import streamlit as st
 from pytube import YouTube
 import qr_maker
+import os
 #from streamlit_player import st_player
 
 ###### SET UP PAGE ######
@@ -90,6 +91,7 @@ if url != '':
 
     values = ['lowest','highest',"720p", "480p", "360p", "240p", "144p"]
     default_ix = values.index('highest')
+    desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
 
     with st.sidebar.beta_container():
         resolution_level = st.selectbox('Resolution Level ?', values, index=default_ix)
@@ -97,25 +99,28 @@ if url != '':
 
     if len(video) > 0:
         downloaded , download_audio = False , False
-        with st.sidebar.beta_container():
-            download_video = st.button("Download Video")
+        yt_file = f'{desktop}\\{title}.mp4'
+        yt_file =st.text_input('Download video to :',yt_file)
+        download_video = st.button("Download Video",)
         #if yt.streams.filter(only_audio=True):
         #    with st.sidebar.beta_container():
         #        download_audio = st.button("Download Audio Only")
         if download_video:
             #resolution_level = st.selectbox('resolution level ?', ['lowest','highest'])
             if resolution_level == 'lowest':
-                video.get_lowest_resolution().download()
+                video.get_lowest_resolution().download(filename=yt_file)
             else:
                 if resolution_level == 'highest':
-                    video.get_highest_resolution().download()
+                    video.get_highest_resolution().download(filename=yt_file)
                 else:
                     resolutions=["720p", "480p", "360p", "240p", "144p"]
-                    video.get_by_resolution(resolutions[0]).download()
+                    video.get_by_resolution(resolutions[0]).download(filename=yt_file)
 
             downloaded = True
         if download_audio:
-            video.filter(only_audio=True).first().download()
+            yt_file = f'{desktop}\\{title}.mp3'
+            yt_file =st.text_input('Download the audio to :',yt_file)
+            video.filter(only_audio=True).first().download(filename=yt_file)
             downloaded = True
         if downloaded:
             st.subheader("Download Complete")
