@@ -2,7 +2,7 @@ from altair.vegalite.v4.api import value
 import streamlit as st
 from pytube import YouTube
 import qr_maker
-import os
+
 #import pathlib
 
 #from streamlit_player import st_player
@@ -73,7 +73,7 @@ with st.sidebar.beta_container():
 # Embed a music from SoundCloud
 #st_player("https://soundcloud.com/imaginedragons/demons")
 
-download_path = '.'    # pathlib.Path.home()
+#download_path = '.'    # pathlib.Path.home()
 
 #url = st.text_input(label='URL', value=url)
 
@@ -102,7 +102,7 @@ if url != '':
 
     if len(video) > 0:
         downloaded , download_audio = False , False
-        yt_file = os.path.join(download_path, f'{title}.mp4')
+        yt_file = f'{title}.mp4'
         yt_file =st.text_input('Download video to :',yt_file)
         download_video = st.button("Download Video",)
         #if yt.streams.filter(only_audio=True):
@@ -121,7 +121,7 @@ if url != '':
 
             downloaded = True
         if download_audio:
-            yt_file = os.path.join(download_path, f'{title}.mp3')
+            yt_file = f'{title}.mp3'
             yt_file =st.text_input('Download the audio to :',yt_file)
             video.filter(only_audio=True).first().download(filename=yt_file)
             downloaded = True
