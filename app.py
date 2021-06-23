@@ -3,12 +3,6 @@ import streamlit as st
 from pytube import YouTube
 import qr_maker
 
-#import pathlib
-
-#from streamlit_player import st_player
-
-###### SET UP PAGE ######
-#icon_path = os.path.join(".", "images", "BullBear.png")
 st.set_page_config(page_title="金融科技專題 - 自動生成摘要與總結", page_icon=':smiley:',  # ':crescent-​moon:'
                     layout='centered', initial_sidebar_state="auto")#"collapsed")
 
@@ -41,50 +35,25 @@ with st.sidebar.beta_container():
     
     title = st.selectbox('請選擇-專題成果影片: ', list(titles), 0)
     url = yt_url[title][0]
-    if len(yt_url[title])>1:
-        gits = ''#'<a href="{git}" target="_blank">Github</a> | '.format(git=yt_url[title][1])
-    else:
-        gits = ''
-    #st.info(f"{title} {url}")
 
-with st.sidebar.beta_container():
     qr_size = 5 #st.slider('Slide me', min_value = 6, max_value = 12, value = 6)
-    #logo_file = st.file_uploader("./images/NanShan-New-Small.png")
-    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'
-    
-    #if logo_file:
-    #    open("./images/logo.png", "wb").write(logo_file.getbuffer())
-    #    qr_name = qr_maker.qr_code(link=url, logo=True,  size=qr_size)
-    #    st.image(qr_name, caption=f'{title} - Youtube')
-    #    #open("./images/logo.png", "wb").write(logo_file.getbuffer())
-    #    qr_name = qr_maker.qr_code(link=hyper_link, logo=True,  size=qr_size)
-    #    st.image(qr_name, caption=hyper_link)
-    #else:
     qr_name = qr_maker.qr_code(link=url, logo=False,  size=qr_size)
     st.image(qr_name, caption=f'{title} - Youtube')
 
+    #logo_file = st.file_uploader("./images/NanShan-New-Small.png")
+    #open("./images/logo.png", "wb").write(logo_file.getbuffer())
+    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'    
     qr_name = qr_maker.qr_code(link=hyper_link, logo=False,  size=qr_size)
     st.image(qr_name, caption=hyper_link)
 
 
-# Embed a youtube video
-#st_player("https://youtu.be/CmSKVW1v0xM")
-
-# Embed a music from SoundCloud
-#st_player("https://soundcloud.com/imaginedragons/demons")
-
-#download_path = '.'    # pathlib.Path.home()
-
-#url = st.text_input(label='URL', value=url)
-
 if url != '':
-    #st.write(f'Getting the Data for the Youtube video \n{url}')
     #st_player(url)
     yt = YouTube(url)
     #raw_data = urllib.request.urlopen(yt.thumbnail_url).read()
     #image = Image.open(io.BytesIO(raw_data))#.resize((200, 200))
     #st.image(image)#, width=300)
-    st.markdown(f'<h3 style="float: left;">{gits}{yt.title}</h3><a href={url}><img style="float: right;" src={yt.thumbnail_url} width="700"/></a>', unsafe_allow_html=True)
+    st.markdown(f'<h3 style="float: left;">{yt.title}</h3><a href={url}><img style="float: right;" src={yt.thumbnail_url} width="700"/></a>', unsafe_allow_html=True)
 
     #st.write('Understanding the Stream Object')
     #print(yt.streams)
@@ -102,8 +71,8 @@ if url != '':
 
     if len(video) > 0:
         downloaded , download_audio = False , False
-        yt_file = f'{title}.mp4'
-        yt_file =st.text_input('Download video to :',yt_file)
+        #yt_file = f'{title}.mp4'
+        #yt_file =st.text_input('Download the video to :',yt_file)
         download_video = st.button("Download Video",)
         #if yt.streams.filter(only_audio=True):
         #    with st.sidebar.beta_container():
@@ -111,19 +80,19 @@ if url != '':
         if download_video:
             #resolution_level = st.selectbox('resolution level ?', ['lowest','highest'])
             if resolution_level == 'lowest':
-                video.get_lowest_resolution().download(filename=yt_file)
+                video.get_lowest_resolution().download()
             else:
                 if resolution_level == 'highest':
-                    video.get_highest_resolution().download(filename=yt_file)
+                    video.get_highest_resolution().download()
                 else:
                     resolutions=["720p", "480p", "360p", "240p", "144p"]
-                    video.get_by_resolution(resolutions[0]).download(filename=yt_file)
+                    video.get_by_resolution(resolutions[0]).download()
 
             downloaded = True
         if download_audio:
-            yt_file = f'{title}.mp3'
-            yt_file =st.text_input('Download the audio to :',yt_file)
-            video.filter(only_audio=True).first().download(filename=yt_file)
+            #yt_file = f'{title}.mp3'
+            #yt_file =st.text_input('Download the audio to :',yt_file)
+            video.filter(only_audio=True).first().download()
             downloaded = True
         if downloaded:
             st.subheader("Download Complete")
