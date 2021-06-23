@@ -2,7 +2,7 @@ from altair.vegalite.v4.api import value
 import streamlit as st
 from pytube import YouTube
 import qr_maker
-from streamlit_player import st_player
+#from streamlit_player import st_player
 
 ###### SET UP PAGE ######
 #icon_path = os.path.join(".", "images", "BullBear.png")
@@ -76,7 +76,7 @@ with st.sidebar.beta_container():
 if url != '':
     #st.write(f'Getting the Data for the Youtube video \n{url}')
     st_player(url)
-    yt = YouTube(url)
+    #yt = YouTube(url)
     #raw_data = urllib.request.urlopen(yt.thumbnail_url).read()
     #image = Image.open(io.BytesIO(raw_data))#.resize((200, 200))
     #st.image(image)#, width=300)
