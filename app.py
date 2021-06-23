@@ -75,8 +75,8 @@ with st.sidebar.beta_container():
 
 if url != '':
     #st.write(f'Getting the Data for the Youtube video \n{url}')
-    st_player(url)
-    #yt = YouTube(url)
+    #st_player(url)
+    yt = YouTube(url)
     #raw_data = urllib.request.urlopen(yt.thumbnail_url).read()
     #image = Image.open(io.BytesIO(raw_data))#.resize((200, 200))
     #st.image(image)#, width=300)
