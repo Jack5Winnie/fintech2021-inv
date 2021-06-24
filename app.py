@@ -57,7 +57,8 @@ with st.sidebar.beta_container():
 
     #logo_file = st.file_uploader("./images/NanShan-New-Small.png")
     #open("./images/logo.png", "wb").write(logo_file.getbuffer())
-    hyper_link = 'https://fintech2021-youtube.herokuapp.com/'    
+    #hyper_link = 'https://fintech2021-youtube.herokuapp.com/'
+    hyper_link = 'https://fintech2021-inv.herokuapp.com/'
     qr_name = qr_maker.qr_code(link=hyper_link, logo=False,  size=qr_size)
     st.image(qr_name, caption=hyper_link)
 
