@@ -8,6 +8,21 @@ st.set_page_config(page_title="金融科技專題 - 自動生成摘要與總結"
 
 st.title("金融科技專題:文本生成-市場焦點機器人")
 
+with st.beta_expander('本題, 有四組隊伍(18人)實作【文字探勘】的應用。總結,各組表現評語:',expanded=False):
+    with st.beta_container():
+        st.info('題目設有__三定錨__, 分別是: ①新聞爬蟲、②文章摘要、③生成簡報。分組討論-特色發展。')
+        st.write('__突發事件新聞__考驗決策者，需有效率地__縮短決策時間__。自動收集社群新聞、__精簡摘要__、匯整數據圖表、製作報告__過程自動化__,就很重要。__化繁為簡__提升__專注__才有**執行力**。__自動化__可**減少勞力**。')
+        st.info('【第一組】引用先進的__生成摘要__模型(BART)、視覺化__市場情緒__、匯整金融__數據圖表__、**自動化**報告生成。建構較為__完整__、__實用__(如, 研究員晨報、商情報告、金融監理態度...)。')
+
+        st.write('但這還不夠, 新聞是否被__主力__置入了__偏見__?')
+        st.info('【第二組】發展了__無偏見新聞__的處理。還有, 應用__情緒計算__在分析__ESG__的議題。')
+
+        st.write('在無特定方向中找潛力方向？決策者最想預知__那些是具潛力發展的議題__，值得持續關注。')
+        st.info('【第三組】先用Google Trend找出__群眾熱搜趨勢__、挖掘**潛在議題**、輔助決策-__超前佈署__。')
+
+        st.info('【第四組】從__公司__新聞角度, 計算__新聞情緒__與__股價__進行比對分析。')
+        st.write('綜合這四組發展__不同特色__的拼圖及解方, 但__目前__以第一組的__完整度__、__實用性__較高。')
+
 yt_url= {'第1組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/7xnzMr0B3b8',
             'https://docs.google.com/presentation/d/1pRoNldhsNV0JASts5NCjtUZW37ZCSJCkKcaZ97cgmio/edit'],
          '第1組-10分鐘-遴選.市場焦點機器人':['https://www.youtube.com/watch?v=Is2hGoqxx3k', 
@@ -33,7 +48,7 @@ with st.sidebar.beta_container():
     st.markdown('''<h1 style="float: left;">南山人壽.投資-台大-東吳</h>''', unsafe_allow_html=True)
     st.write('Mentor: Jack & Taylor')
     
-    title = st.selectbox('請選擇-專題成果影片: ', list(titles), 0)
+    title = st.selectbox('請選擇-各組專題成果影片: ', list(titles), 0)
     url = yt_url[title][0]
 
     qr_size = 5 #st.slider('Slide me', min_value = 6, max_value = 12, value = 6)
