@@ -23,8 +23,7 @@ yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://y
          '安侯建業-優勝組-3分鐘-廣告.建立舞弊風險指標預警機制':['https://youtu.be/BNk6Kz-TD7I'],
          '安侯建業-優勝組-15分鐘介紹.建立舞弊風險指標預警機制':['https://youtu.be/J38fAyPl9vs'],
          '安侯建業-優勝2組-3分鐘-廣告.汽車保險創新模式行程保單':['https://youtu.be/z8i3ryjgN9k'],
-         '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso'],
-         }
+         '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso']         }
 
 titles, urls = yt_url.keys(), yt_url.values()
 with st.sidebar.beta_container():
@@ -36,18 +35,18 @@ with st.sidebar.beta_container():
     url = yt_url[title][0]
 
     qr_size = 5 #st.slider('Slide me', min_value = 6, max_value = 12, value = 6)
-    qr_name = qr_maker.qr_code(link=url, logo=False,  size=qr_size)
+    qr_name = qr_maker.qr_code(link=f"{url}", logo=False,  size=qr_size)
     st.image(qr_name, caption=f'{title} - Youtube')
 
     hyper_link = 'https://fintech2021-inv.herokuapp.com/'
-    qr_name = qr_maker.qr_code(link=hyper_link, logo=False,  size=qr_size)
-    st.image(qr_name, caption=hyper_link)
+    qr_name = qr_maker.qr_code(link=f"{hyper_link}", logo=False,  size=qr_size)
+    st.image(qr_name, caption=f"{hyper_link}")
 
 
 if url != '':
     yt = YouTube(url)
 
-    st.markdown(f'<h3 style="float: left;">{yt.title}</h3><a href={url}><img style="float: right;" src={yt.thumbnail_url} width="700"/></a>', unsafe_allow_html=True)
+    st.markdown(f'<h3 style="float: left;">{yt.title}</h3><a href="{url}"><img style="float: right;" src="{yt.thumbnail_url}" width="700"/></a>', unsafe_allow_html=True)
 
     st.subheader('''Length: {:.2f} Minutes  ||   Rating: {} '''.format(yt.length/60.0 , yt.rating))
     video = yt.streams
