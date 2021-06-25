@@ -8,14 +8,23 @@ st.set_page_config(page_title="金融科技專題 - 自動生成摘要與總結"
 
 st.title("金融科技專題:文本生成-市場焦點機器人")
 
-yt_url= {'第1組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/7xnzMr0B3b8'],
-         '第1組-10分鐘-遴選.市場焦點機器人':['https://www.youtube.com/watch?v=Is2hGoqxx3k'],
-         '第2組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/4i5B8hfvl6w'],
-         '第2組-15分鐘介紹.市場焦點機器人':['https://youtu.be/gW8CkxQubj4'],
-         '第3組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/lDfDV1I2Pr4'],
-         '第3組-15分鐘介紹.市場焦點機器人':['https://youtu.be/OBavep3gY_E'],
-         '第4組-3分鐘-廣告.市場焦點機器人':['https://www.youtube.com/watch?v=sia8o_xN8ag'],
-         '第4組-15分鐘介紹.市場焦點機器人':['https://www.youtube.com/watch?v=YFBpGaHVnz8']}
+yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/7xnzMr0B3b8'],
+         '南山人壽-第1組-15分鐘-介紹.市場焦點機器人':['https://youtu.be/Is2hGoqxx3k'],
+         '南山人壽-第2組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/4i5B8hfvl6w'],
+         '南山人壽-第2組-15分鐘介紹.市場焦點機器人':['https://youtu.be/gW8CkxQubj4'],
+         '南山人壽-第3組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/lDfDV1I2Pr4'],
+         '南山人壽-第3組-15分鐘介紹.市場焦點機器人':['https://youtu.be/OBavep3gY_E'],
+         '南山人壽-第4組-3分鐘-廣告.市場焦點機器人':['https://www.youtube.com/watch?v=sia8o_xN8ag'],
+         '南山人壽-第4組-15分鐘介紹.市場焦點機器人':['https://www.youtube.com/watch?v=YFBpGaHVnz8'],
+         '南山人壽-優勝組-3分鐘-廣告.運用機器學習於業務員風險偵測':['https://youtu.be/Kf7v187uUrA'],
+         '南山人壽-優勝組-15分鐘介紹.運用機器學習於業務員風險偵測':['https://youtu.be/pt1ZoWrdNFw'],
+         '台灣人壽-優勝組-3分鐘-廣告.花甲不孤單':['https://youtu.be/DYNIMNFeyUw'],
+         '台灣人壽-優勝組-15分鐘介紹.花甲不孤單':['https://youtu.be/OSfNkZ1p7QU'],
+         '安侯建業-優勝組-3分鐘-廣告.建立舞弊風險指標預警機制':['https://youtu.be/BNk6Kz-TD7I'],
+         '安侯建業-優勝組-15分鐘介紹.建立舞弊風險指標預警機制':['https://youtu.be/J38fAyPl9vs'],
+         '安侯建業-優勝2組-3分鐘-廣告.汽車保險創新模式行程保單':['https://youtu.be/z8i3ryjgN9k'],
+         '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso'],
+         }
 
 titles, urls = yt_url.keys(), yt_url.values()
 with st.sidebar.beta_container():
