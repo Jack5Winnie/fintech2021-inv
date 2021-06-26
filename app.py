@@ -18,12 +18,16 @@ yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://y
          '南山人壽-第4組-15分鐘介紹.市場焦點機器人':['https://www.youtube.com/watch?v=YFBpGaHVnz8'],
          '南山人壽-優勝組-3分鐘-廣告.運用機器學習於業務員風險偵測':['https://youtu.be/Kf7v187uUrA'],
          '南山人壽-優勝組-15分鐘介紹.運用機器學習於業務員風險偵測':['https://youtu.be/pt1ZoWrdNFw'],
+         '玉山證券-優勝組-3分鐘-廣告.個人投資風險管家':['https://youtu.be/2FRqw1uEiac'],
+         '玉山證券-優勝組-15分鐘介紹.個人投資風險管家':['https://youtu.be/iqn2AxEXt50'],
+         '永豐金控-優勝組-3分鐘-廣告.AI挑選最佳基金':['https://youtu.be/GyuDfw4FKzg'],
+         '永豐金控-優勝組-15分鐘介紹.AI挑選最佳基金':['https://youtu.be/9TEgCBaxdiM'],
          '台灣人壽-優勝組-3分鐘-廣告.花甲不孤單':['https://youtu.be/DYNIMNFeyUw'],
          '台灣人壽-優勝組-15分鐘介紹.花甲不孤單':['https://youtu.be/OSfNkZ1p7QU'],
          '安侯建業-優勝組-3分鐘-廣告.建立舞弊風險指標預警機制':['https://youtu.be/BNk6Kz-TD7I'],
          '安侯建業-優勝組-15分鐘介紹.建立舞弊風險指標預警機制':['https://youtu.be/J38fAyPl9vs'],
          '安侯建業-優勝2組-3分鐘-廣告.汽車保險創新模式行程保單':['https://youtu.be/z8i3ryjgN9k'],
-         '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso']         }
+         '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso']}
 
 titles, urls = yt_url.keys(), yt_url.values()
 with st.sidebar.beta_container():
