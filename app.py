@@ -18,6 +18,12 @@ yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://y
          '南山人壽-第4組-15分鐘介紹.市場焦點機器人':['https://www.youtube.com/watch?v=YFBpGaHVnz8'],
          '南山人壽-優勝組-3分鐘-廣告.運用機器學習於業務員風險偵測':['https://youtu.be/Kf7v187uUrA'],
          '南山人壽-優勝組-15分鐘介紹.運用機器學習於業務員風險偵測':['https://youtu.be/pt1ZoWrdNFw'],
+
+         '國泰人壽-優勝組-3分鐘-廣告.人臉辨識技術-吸菸者':['https://youtu.be/aZO6bzMm__A'],
+         '國泰人壽-優勝組-15分鐘介紹.人臉辨識技術-吸菸者':['https://youtu.be/w_4QGtyS2Ss'],
+         '國泰人壽-優勝2組-3分鐘-廣告.Cathay Walker Plus企業版推動案':['https://youtu.be/vwwnVrAw6IU'],
+         '國泰人壽-優勝2組-15分鐘介紹.Cathay Walker Plus企業版推動案':['https://youtu.be/E_mx8QvpIfk'],
+
          '玉山證券-優勝組-3分鐘-廣告.個人投資風險管家':['https://youtu.be/2FRqw1uEiac'],
          '玉山證券-優勝組-15分鐘介紹.個人投資風險管家':['https://youtu.be/iqn2AxEXt50'],
          '永豐金控-優勝組-3分鐘-廣告.AI挑選最佳基金':['https://youtu.be/GyuDfw4FKzg'],
@@ -27,7 +33,13 @@ yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://y
          '安侯建業-優勝組-3分鐘-廣告.建立舞弊風險指標預警機制':['https://youtu.be/BNk6Kz-TD7I'],
          '安侯建業-優勝組-15分鐘介紹.建立舞弊風險指標預警機制':['https://youtu.be/J38fAyPl9vs'],
          '安侯建業-優勝2組-3分鐘-廣告.汽車保險創新模式行程保單':['https://youtu.be/z8i3ryjgN9k'],
-         '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso']}
+         '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso'],
+         
+         '野村投信-優勝組-3分鐘-廣告.理財機器人NomuraBot':['https://youtu.be/1XrKLYqYK-8'],
+         '野村投信-優勝組-15分鐘介紹.理財機器人NomuraBot':['https://youtu.be/dCHV_nD3tlI'],
+         '野村投信-優勝2組-3分鐘-廣告.網頁視覺化熱門字組分析':['https://youtu.be/jGYMHPYvXVA'],
+         '野村投信-優勝2組-15分鐘介紹.網頁視覺化熱門字組分析':['https://youtu.be/m3-hq_hJMw8']
+         }
 
 titles, urls = yt_url.keys(), yt_url.values()
 with st.sidebar.beta_container():
@@ -50,7 +62,7 @@ with st.sidebar.beta_container():
 if url != '':
     yt = YouTube(url)
 
-    st.markdown(f'<h3 style="float: left;">{yt.title}</h3><a href="{url}"><img style="float: right;" src="{yt.thumbnail_url}" width="700"/></a>', unsafe_allow_html=True)
+    st.markdown(f'<h3 style="float: left;">{yt.title}</h3><a href="{url}" TARGET="_blank"><img style="float: right;" src="{yt.thumbnail_url}" width="700"/></a>', unsafe_allow_html=True)
 
     st.subheader('''Length: {:.2f} Minutes  ||   Rating: {} '''.format(yt.length/60.0 , yt.rating))
     video = yt.streams
