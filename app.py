@@ -45,7 +45,9 @@ yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://y
          '野村投信-優勝組-15分鐘介紹.理財機器人NomuraBot':['https://youtu.be/dCHV_nD3tlI'],
          '野村投信-優勝2組-3分鐘-廣告.網頁視覺化熱門字組分析':['https://youtu.be/jGYMHPYvXVA'],
          '野村投信-優勝2組-15分鐘介紹.網頁視覺化熱門字組分析':['https://youtu.be/m3-hq_hJMw8'],
-         
+
+         '新安東京海上產險優勝組-車險組':['https://youtu.be/cQ3FfQHkFaU'],
+
          '普匯金融-優勝組-交易模式AI偵測模組':['https://youtu.be/Gv4RRwCxOMQ'],
          '普匯金融-優勝2組-社會新鮮人信用評估－以社群資訊為例':['https://youtu.be/CIhHwbdNClU'],
 
