@@ -6,7 +6,7 @@ import qr_maker
 st.set_page_config(page_title="金融科技專題 - 自動生成摘要與總結", page_icon=':smiley:',  # ':crescent-​moon:'
                     layout='centered', initial_sidebar_state="auto")#"collapsed")
 
-st.title("金融科技專題:文本生成-市場焦點機器人")
+st.title("跨校金融科技課程-專題成果影片-整理")
 
 yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://youtu.be/7xnzMr0B3b8'],
          '南山人壽-第1組-15分鐘-介紹.市場焦點機器人':['https://youtu.be/Is2hGoqxx3k'],
@@ -16,6 +16,7 @@ yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://y
          '南山人壽-第3組-15分鐘介紹.市場焦點機器人':['https://youtu.be/OBavep3gY_E'],
          '南山人壽-第4組-3分鐘-廣告.市場焦點機器人':['https://www.youtube.com/watch?v=sia8o_xN8ag'],
          '南山人壽-第4組-15分鐘介紹.市場焦點機器人':['https://www.youtube.com/watch?v=YFBpGaHVnz8'],
+
          '南山人壽-優勝組-3分鐘-廣告.運用機器學習於業務員風險偵測':['https://youtu.be/Kf7v187uUrA'],
          '南山人壽-優勝組-15分鐘介紹.運用機器學習於業務員風險偵測':['https://youtu.be/pt1ZoWrdNFw'],
 
@@ -26,20 +27,30 @@ yt_url= {'南山人壽-第1組-3分鐘-廣告.市場焦點機器人':['https://y
 
          '玉山證券-優勝組-3分鐘-廣告.個人投資風險管家':['https://youtu.be/2FRqw1uEiac'],
          '玉山證券-優勝組-15分鐘介紹.個人投資風險管家':['https://youtu.be/iqn2AxEXt50'],
+
          '永豐金控-優勝組-3分鐘-廣告.AI挑選最佳基金':['https://youtu.be/GyuDfw4FKzg'],
          '永豐金控-優勝組-15分鐘介紹.AI挑選最佳基金':['https://youtu.be/9TEgCBaxdiM'],
+         '永豐金控-優勝組2-3分鐘-廣告.千人千面的證券自動化服務':['https://youtu.be/Vxc8XFgPM5U'],
+         '永豐金控-優勝組2-15分鐘介紹.千人千面的證券自動化服務':['https://youtu.be/JaBwG8FGv-Q'],
+
          '台灣人壽-優勝組-3分鐘-廣告.花甲不孤單':['https://youtu.be/DYNIMNFeyUw'],
          '台灣人壽-優勝組-15分鐘介紹.花甲不孤單':['https://youtu.be/OSfNkZ1p7QU'],
+
          '安侯建業-優勝組-3分鐘-廣告.建立舞弊風險指標預警機制':['https://youtu.be/BNk6Kz-TD7I'],
          '安侯建業-優勝組-15分鐘介紹.建立舞弊風險指標預警機制':['https://youtu.be/J38fAyPl9vs'],
          '安侯建業-優勝2組-3分鐘-廣告.汽車保險創新模式行程保單':['https://youtu.be/z8i3ryjgN9k'],
          '安侯建業-優勝2組-15分鐘介紹.汽車保險創新模式行程保單':['https://youtu.be/eQxMPDXraso'],
-         
+
          '野村投信-優勝組-3分鐘-廣告.理財機器人NomuraBot':['https://youtu.be/1XrKLYqYK-8'],
          '野村投信-優勝組-15分鐘介紹.理財機器人NomuraBot':['https://youtu.be/dCHV_nD3tlI'],
          '野村投信-優勝2組-3分鐘-廣告.網頁視覺化熱門字組分析':['https://youtu.be/jGYMHPYvXVA'],
-         '野村投信-優勝2組-15分鐘介紹.網頁視覺化熱門字組分析':['https://youtu.be/m3-hq_hJMw8']
-         }
+         '野村投信-優勝2組-15分鐘介紹.網頁視覺化熱門字組分析':['https://youtu.be/m3-hq_hJMw8'],
+         
+         '普匯金融-優勝組-交易模式AI偵測模組':['https://youtu.be/Gv4RRwCxOMQ'],
+         '普匯金融-優勝2組-社會新鮮人信用評估－以社群資訊為例':['https://youtu.be/CIhHwbdNClU'],
+
+         'Google Meet 會議室連結, 2021年6月30日上午9-12':['https://meet.google.com/rec-njmn-rio'],
+         'YouTube 直播連結':['https://youtu.be/87oV08LWxFc']  }
 
 titles, urls = yt_url.keys(), yt_url.values()
 with st.sidebar.beta_container():
